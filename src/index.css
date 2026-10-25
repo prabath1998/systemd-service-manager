@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Yaru-inspired palette: Ubuntu orange accent on neutral greys. */
+:root {
+  --radius: 0.5rem;
+  --background: #fafafa;
+  --foreground: #2b2b2b;
+  --card: #ffffff;
+  --card-foreground: #2b2b2b;
+  --popover: #ffffff;
+  --popover-foreground: #2b2b2b;
+  --primary: #e95420;
+  --primary-foreground: #ffffff;
+  --secondary: #efefef;
+  --secondary-foreground: #2b2b2b;
+  --muted: #f0f0f0;
+  --muted-foreground: #6b6b6b;
+  --accent: #ececec;
+  --accent-foreground: #2b2b2b;
+  --destructive: #c7162b;
+  --destructive-foreground: #ffffff;
+  --border: #e2e2e2;
+  --input: #d6d6d6;
+  --ring: #e95420;
+  --sidebar: #f2f2f2;
+  --titlebar: #ebebeb;
+  --success: #0e8420;
+  --warning: #c78c00;
+}
+
+.dark {
+  --background: #1e1e1e;
+  --foreground: #f2f2f2;
+  --card: #262626;
+  --card-foreground: #f2f2f2;
+  --popover: #2c2c2c;
+  --popover-foreground: #f2f2f2;
+  --primary: #e95420;
+  --primary-foreground: #ffffff;
+  --secondary: #333333;
+  --secondary-foreground: #f2f2f2;
+  --muted: #2c2c2c;
+  --muted-foreground: #a3a3a3;
+  --accent: #363636;
+  --accent-foreground: #f2f2f2;
+  --destructive: #e0384c;
+  --destructive-foreground: #ffffff;
+  --border: #383838;
+  --input: #444444;
+  --ring: #e95420;
+  --sidebar: #242424;
+  --titlebar: #2a2a2a;
+  --success: #3cb64b;
+  --warning: #f0b429;
+}
+
+@theme inline {
+  --font-sans: "Ubuntu Sans", "Ubuntu", "Cantarell", system-ui, sans-serif;
+  --font-mono: "Ubuntu Sans Mono", "Ubuntu Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-titlebar: var(--titlebar);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html,
+  body,
+  #root {
+    @apply h-full overflow-hidden;
+  }
+  body {
+    @apply bg-background text-foreground font-sans text-sm antialiased select-none;
+  }
+  input,
+  textarea,
+  pre,
+  code {
+    @apply select-text;
+  }
+}
